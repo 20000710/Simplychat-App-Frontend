@@ -1,0 +1,33 @@
+.main-chat{
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main-chat .profile-name{
+    font-weight: 500;
+    font-size: 22px;    
+    letter-spacing: -0.165px;
+    color: #232323;
+    margin-right: 7px;
+}
+
+.main-chat .status{
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: -0.165px;
+    color: #7E98DF;
+}
+
+.main-chat#message{
+    background: #FAFAFA;
+    border-radius: 15px;
+}
+
+.input-message{
+    width: 60%;
+    display: flex;
+    position: fixed;
+    top: 90%;
+}
