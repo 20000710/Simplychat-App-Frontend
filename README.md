@@ -96,15 +96,15 @@ Make sure that Node JS is installed on the computer.
 <p align="center" display=flex>
 <table>
   <tr>
-    <td><image src="./src/screenshot/register.png" alt="Register Page" width=100%></td>
-    <td><image src="./src/screenshot/login.png" alt="Login Page" width=100%/></td>
+    <td><image src="./screenshot/register.png" alt="Register Page" width=100%></td>
+    <td><image src="./screenshot/login.png" alt="Login Page" width=100%/></td>
   </tr>
    <tr>
     <td>Register</td>
     <td>Login</td>
   </tr>
   <tr>
-    <td><image src="./src/screenshot/main-chat.png" alt="Main Chat" width=100% ></td>
+    <td><image src="./screenshot/main-chat.png" alt="Main Chat" width=100% ></td>
     <td><image src="./screenshot/chat-to-user.png" alt="User Chat to User" width=100%/></td>
   </tr>
   <tr>
@@ -112,7 +112,7 @@ Make sure that Node JS is installed on the computer.
     <td>User chat to User</td>
   </tr>
   <tr>
-    <td><image src="./src/screenshot/profile.png" alt="Profile Page" width=50%/></td>
+    <td><image src="./screenshot/profile.png" alt="Profile Page" width=50%/></td>
   </tr>
   <tr>
      <td>Profile Page</td>
