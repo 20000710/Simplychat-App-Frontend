@@ -4,7 +4,6 @@ import UserContact from '../components/user-contact/userContact'
 // import socket from '../socket'
 import { io } from "socket.io-client";
 import { useSearchParams } from "react-router-dom";
-import contactImg5 from '../assets/img/contact-img-5.png'
 import '../assets/style/chatroom.css'
 import Chat from '../components/chat/chat';
 import { useDispatch, useSelector } from 'react-redux';
@@ -25,9 +24,6 @@ const Chatroom = () => {
 
   console.log('usersData: ', usersDetail);
   console.log('detailReceiver:', detailReceiver);
-  const handleChange = (e) => {
-    setMessage(e.target.value)
-  }
 
   useEffect(() => {
     const user_id = Cookies.get("user_id")
@@ -53,8 +49,8 @@ const Chatroom = () => {
           console.log(dateChat)
 
           if (dateChat === dateNow) {
-            localStorage.setItem("notif", true)
-            if (localStorage.getItem('notif') === 'true') {
+            Cookies.set("notif", true)
+            if (Cookies.get('notif') === 'true') {
               alert(response[response.length - 1].chat, 'success')
 
               setTimeout(() => {
@@ -65,13 +61,13 @@ const Chatroom = () => {
               }, 4000)
             }
             // return;
-            localStorage.removeItem("notif")
+            Cookies.remove("notif")
           }
           setListChat(response);
 
           setTimeout(() => {
             const elem = document.getElementById('chatMenuMessage');
-            elem.scrollTop = elem.scrollHeight;
+            // elem.scrollTop = elem.scrollHeight;
           }, 500);
 
         }
@@ -85,9 +81,9 @@ const Chatroom = () => {
     dispatch(getDetailReceiver(receiverId));
     setActiveReceiver(receiverId);
     Cookies.set('receiver', receiverId);
-    socketio.emit('join-room', Cookies.get('id_user'));
+    socketio.emit('join-room', Cookies.get('user_id'));
     socketio.emit('chat-history', {
-      sender: Cookies.get('id_user'),
+      sender: Cookies.get('user_id'),
       receiver: receiverId,
     });
   };
@@ -105,7 +101,7 @@ const Chatroom = () => {
     }
 
     const data = {
-      sender: Cookies.get('id'),
+      sender: Cookies.get('user_id'),
       receiver: activeReceiver,
       date: new Date(),
       chat: message,
@@ -114,7 +110,7 @@ const Chatroom = () => {
     socketio.emit('send-message', data);
 
     const payload = {
-      sender_id: Cookies.get('id'),
+      sender_id: Cookies.get('user_id'),
       receiver_id: activeReceiver,
       photo: usersDetail.photo,
       date: new Date(),
@@ -127,7 +123,7 @@ const Chatroom = () => {
 
     setTimeout(() => {
       const elem = document.getElementById('chatMenuMessage');
-      elem.scrollTop = elem.scrollHeight;
+      // elem.scrollTop = elem.scrollHeight;
     }, 100);
   };
 
@@ -182,7 +178,7 @@ const Chatroom = () => {
       <div className="row">
         <div className="col-lg-4 col-md-6 col-4">
           <Header />
-          <UserContact selectReceiver={selectReceiver} handleTab={handleTab} />
+          <UserContact selectReceiver={selectReceiver} listChat={listChat} handleTab={handleTab} />
         </div>
         {tab === false ?
           <div className="col-lg-8 col-8 d-flex justify-content-center align-items-center" style={{ background: "#FAFAFA" }}>

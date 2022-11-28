@@ -1,5 +1,5 @@
 const initialState = {
-    usersData: [],
+    userList: [],
     userDetail: [],
 };
 
@@ -7,7 +7,7 @@ export const usersDataReducers = (state = initialState, action) => {
     if (action.type === "GET_ALL_USER") {
         return {
             ...state,
-            usersData: action.payload
+            userList: action.payload
         };
     } else if (action.type === "GET_DETAIL_USER") {
         return {

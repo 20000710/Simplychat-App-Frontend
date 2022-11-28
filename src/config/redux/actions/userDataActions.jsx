@@ -2,15 +2,14 @@ import axios from 'axios';
 import Cookies from 'js-cookie';
 import Swal from "sweetalert2";
 
-export const getAllUser = async (dispatch) => {
+export const getAllUser = () => async (dispatch) => {
     try {
-        const users = await axios.get(
-            process.env.API_BACKEND + "/users"
-        )
+        const users = await axios.get(process.env.REACT_APP_API_BACKEND + "users")
         const result = users.data.data
+        console.log('users: ', users);
         dispatch({ type: "GET_ALL_USER", payload: result })
     } catch (error) {
-        console.log(error.response.data.message)
+        console.log(error)
     }
 }
 
@@ -27,33 +26,34 @@ export const getDetailUser = (id) => async (dispatch) => {
 
 export const getDetailReceiver = (id, navigate) => async (dispatch) => {
     const token = Cookies.get('token');
-  
+
     try {
-      dispatch({
-        type: "GET_DETAIL_RECEIVER_PENDING",
-        payload: null,
-      });
-      const res = await axios.get(`${process.env.REACT_APP_API_BACKEND}users/${id}`);
-  
-      dispatch({
-        type: "GET_DETAIL_RECEIVER_SUCCESS",
-        payload: res.data,
-      });
+        dispatch({
+            type: "GET_DETAIL_RECEIVER_PENDING",
+            payload: null,
+        });
+        const res = await axios.get(`${process.env.REACT_APP_API_BACKEND}users/${id}`);
+
+        dispatch({
+            type: "GET_DETAIL_RECEIVER_SUCCESS",
+            payload: res.data,
+        });
     } catch (error) {
-      if (error.response) {
-        if (parseInt(error.response.data.code, 10) === 401) {
-        //   Cookies.remove("token")
-        //   Cookies.remove("user_id")
-          return navigate('/login');
+        if (error.response) {
+            if (parseInt(error.response.data.code, 10) === 401) {
+                //   Cookies.remove("token")
+                //   Cookies.remove("user_id")
+                return navigate('/login');
+            }
+            error.message = error.response.data.error;
         }
-        error.message = error.response.data.error;
-      }
-      dispatch({
-        type: "GET_DETAIL_RECEIVER_FAILED",
-        payload: error.message,
-      });
+        dispatch({
+            type: "GET_DETAIL_RECEIVER_FAILED",
+            payload: error.message,
+        });
     }
-  };
+};
+
 
 export const updateUser = (data, token, setEdit) => async (dispatch) => {
     console.log("all-data: ", data)
@@ -104,7 +104,7 @@ export const updatePhoto = (id, saveImage, token) => async (dispatch) => {
         //     icon: "success",
         // });
         const result = upload.data.data
-        dispatch({type: "UPLOAD_PHOTO", payload: result})
+        dispatch({ type: "UPLOAD_PHOTO", payload: result })
         window.location.reload();
     } catch (error) {
         Swal.fire({

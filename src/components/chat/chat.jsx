@@ -2,13 +2,20 @@ import React, { useState } from 'react'
 import contactImg5 from '../../assets/img/contact-img-5.png'
 import './chat.css'
 
-const Chat = ({ handleSendMessage }) => {
-  console.log('handle Message', handleSendMessage)
-  const [message, setMessage] = useState("")
-  
-  const handleChange = (e) => {
-    setMessage(e.target.value)  
-  }
+const Chat = ({
+  detailReceiver,
+  activeReceiver,
+  listChat,
+  message,
+  setMessage,
+  onSendMessage,
+  onDeleteMessage,
+  onEditMessage
+}) => {
+  console.log('listChat: ', listChat);
+  console.log('activeReceiver: ', activeReceiver);
+  console.log('detailReceiver: ', detailReceiver);
+
   console.log('messages: ', message);
   return (
     <div>
@@ -22,21 +29,22 @@ const Chat = ({ handleSendMessage }) => {
             <p className="status">online</p>
           </div>
         </nav>
-        <div className="input-message">
+        <form onSubmit={onSendMessage} className="input-message">
           <input
             type="text"
             className="form-control"
             id="message"
             name="message"
-            onChange={handleChange}
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
             placeholder="Type your message..."
             required
             aria-describedby="emailHelp"
           />
           <div className="send-btn">
-            <button type="button" onClick={handleSendMessage} className="btn btn-primary btn-send">Send</button>
+            <button type="submit" className="btn btn-primary btn-send">Send</button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   )
