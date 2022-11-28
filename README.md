@@ -63,7 +63,7 @@ Make sure that Node JS is installed on the computer.
 
 ### Installation
 
-1. Clone this repo (blanja-react)
+1. Clone this repo (simplychat)
    ```sh
    git clone https://github.com/20000710/Simplychat-App-Frontend.git
    ```
@@ -76,7 +76,9 @@ Make sure that Node JS is installed on the computer.
    REACT_APP_API_BACKEND = "ENTER YOUR API";
    ```
 4. Start website
- `sh npm start or yarn start`
+   ```sh 
+   npm start or yarn start
+   ```
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- Related Project -->
