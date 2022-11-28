@@ -73,7 +73,7 @@ Make sure that Node JS is installed on the computer.
    ```
 3. Enter your API in `.env`
    ```js
-  REACT_APP_API_BACKEND = "ENTER YOUR API";
+   REACT_APP_API_BACKEND = "ENTER YOUR API";
    ```
 4. Start website
 `sh npm start or yarn start`
