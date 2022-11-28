@@ -48,7 +48,7 @@ This application was developed using a framework/library
 - [Axios](https://axios-http.com/)
 - [Redux](https://redux.js.org/)
 - [Bootstap](https://getbootstrap.com)
-- [Bootstap](https://socket.io/)
+- [Socket.io](https://socket.io/)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
@@ -76,7 +76,7 @@ Make sure that Node JS is installed on the computer.
    REACT_APP_API_BACKEND = "ENTER YOUR API";
    ```
 4. Start website
-`sh npm start or yarn start`
+ `sh npm start or yarn start`
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- Related Project -->
