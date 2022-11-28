@@ -112,7 +112,7 @@ Make sure that Node JS is installed on the computer.
     <td>User chat to User</td>
   </tr>
   <tr>
-    <td><image src="./src/screenshot/profile.png" alt="Profile Page" width=100%/></td>
+    <td><image src="./src/screenshot/profile.png" alt="Profile Page" width=50%/></td>
   </tr>
   <tr>
      <td>Profile Page</td>
