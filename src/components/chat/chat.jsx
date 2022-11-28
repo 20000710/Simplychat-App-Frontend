@@ -10,12 +10,10 @@ const Chat = ({
   listChat,
   message,
   setMessage,
-  onSendMessage,
-  onDeleteMessage,
-  onEditMessage
+  onSendMessage
 }) => {
-  const [editChat, setEditChat] = useState('');
-  const [editChatData, setEditChatData] = useState(null);
+  // const [editChat, setEditChat] = useState('');
+  // const [editChatData, setEditChatData] = useState(null);
   console.log('listChat: ', listChat);
   console.log('activeReceiver: ', activeReceiver);
   console.log('detailReceiver: ', detailReceiver);
@@ -74,7 +72,7 @@ const Chat = ({
                             )}
                           </div>
                         </div>
-                        {!chat.is_deleted && (
+                        {/* {!chat.is_deleted && (
                           <div
                             className="d-flex justify-content-end w-100"
                             style={{ marginTop: '-12px' }}
@@ -115,7 +113,7 @@ const Chat = ({
                               Delete
                             </span>
                           </div>
-                        )}
+                        )} */}
                       </div>
                     ) : (
                       <div className="d-flex justify-content-start align-items-end mt-4">

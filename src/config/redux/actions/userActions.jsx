@@ -30,8 +30,14 @@ export const register = (data, navigate, setLoading) => async (dispatch) => {
 export const login = (data, navigate, setLoading) => async (dispatch) => {
     try {
         const result = await axios.post(
-            process.env.REACT_APP_API_BACKEND + "auth/login",
-            data
+            process.env.REACT_APP_API_BACKEND + "auth/login", data, {
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+                'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
+                'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token',
+            },
+            'Content-Type': 'application/json'
+        }
         );
 
         const user = result.data;
