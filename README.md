@@ -96,27 +96,25 @@ Make sure that Node JS is installed on the computer.
 <p align="center" display=flex>
 <table>
   <tr>
-    <td><image src="./screenshot/register.png" alt="Register Page" width=100%></td>
-    <td><image src="./screenshot/login.png" alt="Login Page" width=100%/></td>
+    <td><image src="./src/screenshot/register.png" alt="Register Page" width=100%></td>
+    <td><image src="./src/screenshot/login.png" alt="Login Page" width=100%/></td>
   </tr>
    <tr>
     <td>Register</td>
     <td>Login</td>
   </tr>
   <tr>
-    <td><image src="./screenshot/landing-page.png" alt="Home Page" width=100% ></td>
-    <td><image src="./screenshot/detail-product.png" alt="detail product" width=100%/></td>
+    <td><image src="./src/screenshot/main-chat.png" alt="Main Chat" width=100% ></td>
+    <td><image src="./screenshot/chat-to-user.png" alt="User Chat to User" width=100%/></td>
   </tr>
   <tr>
-    <td>Home</td>
-    <td>Search</td>
+    <td>Main Chat</td>
+    <td>User chat to User</td>
   </tr>
   <tr>
-    <td><image src="./screenshot/filter.png" alt="Filter Product" width=100%/></td>
-    <td><image src="./screenshot/payment.png" alt="Payment Checkout Page" width=100%></td>
+    <td><image src="./src/screenshot/profile.png" alt="Profile Page" width=100%/></td>
   </tr>
   <tr>
-     <td>Add Receipe</td>
-     <td>Receipe Detail</td>
+     <td>Profile Page</td>
   </tr>
 </table>
