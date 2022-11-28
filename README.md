@@ -3,7 +3,7 @@
 <!-- HEADER -->
 <div align="center">
   <img src="./src/assets/img/simplychat.png" />
-  <h3 align="center">SimplyChat with React.js</h3>
+  <h3 align="center">SimplyChat with React.js & Socket.io</h3>
 </div>
 
 <!-- TABLE OF CONTENTS -->
