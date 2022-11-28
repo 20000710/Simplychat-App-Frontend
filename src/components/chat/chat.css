@@ -31,3 +31,24 @@
     position: fixed;
     top: 90%;
 }
+
+.ballon-left{
+    background-color: #7E98DF;
+    padding: 20px;
+    max-width: 500px;
+    color: white;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+}
+  
+  .ballon-right {
+    background-color: #fff;
+    padding: 20px;
+    max-width: 500px;
+    color: black;
+    border: 1px solid #7E98DF;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+  }

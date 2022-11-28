@@ -68,7 +68,7 @@
     position: absolute;
     z-index: 2;
     width: 250px;
-    height: 360px;
+    height: auto;
     left: 155px;
     top: 35px;
     background: #7E98DF;

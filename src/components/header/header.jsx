@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import MenuIcon from '../../assets/img/Menu.svg'
 import './header.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import logo from '../../assets/img/simplychat.png'
 import SettingsIcon from '../../assets/img/settings.svg'
 import ContactIcon from '../../assets/img/contacts.svg'
@@ -13,9 +13,11 @@ import searchIcon from '../../assets/img/Search.svg'
 import { useEffect } from 'react'
 import { getAllUser } from '../../config/redux/actions/userDataActions'
 import { useDispatch } from 'react-redux'
+import Cookies from 'js-cookie'
 
 const Header = () => {
     const dispatch = useDispatch()
+    const navigate = useNavigate()
     const [query, setQuery] = useState("")
     const [modalOpen, setModalOpen] = useState(false)
 
@@ -35,6 +37,14 @@ const Header = () => {
         let search = query?.toLowerCase()
         dispatch(getAllUser(search))
     }
+
+    const handleLogOut = () => {
+        Cookies.remove("token")
+        Cookies.remove("user_id")
+        Cookies.remove("receiver")
+        navigate("/login")
+    }
+
     useEffect(() => {
         handleSeach()       
     },[])
@@ -59,38 +69,23 @@ const Header = () => {
                         <li style={{ paddingLeft: "0.5rem" }}>
                             <Link to="/profile">
                                 <img src={SettingsIcon} alt="icon settings" style={{marginRight: "1.875rem"}} />
-                                Settings
+                                Profile
                             </Link>
                         </li>
                         <li style={{ paddingLeft: "0.5rem" }}>
-                            <Link to="#">
+                            <button
+                                type="button" 
+                                onClick={handleLogOut}
+                                style={{ 
+                                    border: "none", 
+                                    background: "none", 
+                                    color: "#fff",
+                                    padding: 0
+                                }}
+                            >
                                 <img src={ContactIcon} alt="icon contacts" style={{marginRight: "1.875rem"}}/>
-                                Contacts
-                            </Link>
-                        </li>
-                        <li style={{ paddingLeft: "0.5rem" }}>
-                            <Link to="#">
-                            <img src={CallsIcon} alt="icon settings" style={{marginRight: "1.575rem"}} /> 
-                                Calls
-                            </Link>
-                        </li>
-                        <li style={{ paddingLeft: "0.75rem" }}>
-                            <Link to="#">
-                            <img src={SaveMessageIcon} alt="icon settings" style={{marginRight: "1.875rem"}} />
-                                Save messages
-                            </Link>
-                        </li>
-                        <li style={{ paddingLeft: "0.5rem" }}>
-                            <Link to="#">
-                            <img src={InviteFriendsIon} alt="icon settings" style={{marginRight: "1.275rem"}} />
-                                Invite Friends
-                            </Link>
-                        </li>
-                        <li style={{ paddingLeft: "0.75rem" }}>
-                            <Link to="#">
-                            <img src={FAQIcon} alt="icon settings" style={{marginRight: "1.375rem"}} />
-                                Telegram FAQ
-                            </Link>
+                                Log out
+                            </button>
                         </li>
                     </ul>
                 </div> : ""
