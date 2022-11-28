@@ -4,9 +4,6 @@ import { updatePhoto } from '../../config/redux/actions/userDataActions';
 
 const ModalUpload = ({ id, photo, token }) => {
     const dispatch = useDispatch()
-    const [data, setData] = useState({
-        photo,
-    })
     const [saveImage, setSaveImage] = useState(photo)
 
     const handleUpload = (e) => {

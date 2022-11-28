@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Header from '../components/header/header'
 import UserContact from '../components/user-contact/userContact'
 // import socket from '../socket'
 import { io } from "socket.io-client";
@@ -29,7 +28,7 @@ const Chatroom = () => {
     const user_id = Cookies.get("user_id")
     console.log('user_id: ', user_id);
     dispatch(getDetailUser(user_id))
-    
+
     const socket = io(process.env.REACT_APP_API_BACKEND);
     socket.on('send-message-response', (response) => {
       const receiver = Cookies.get('receiver');
@@ -90,7 +89,6 @@ const Chatroom = () => {
 
   const onSendMessage = (e) => {
     e.preventDefault();
-
     if (!message) {
       Swal.fire({
         icon: 'error',
@@ -175,10 +173,18 @@ const Chatroom = () => {
 
   return (
     <div>
-      <div className="row">
-        <div className="col-lg-4 col-md-6 col-4">
-          <Header />
-          <UserContact selectReceiver={selectReceiver} listChat={listChat} handleTab={handleTab} />
+      <div style={{height: "100vh"}} className="row">
+        <div
+          style={{
+            boxShadow: "0px 1px 20px rgba(197, 197, 197, 0.25)"
+          }}
+          className="col-lg-4 col-md-6 col-4"
+        >
+          <UserContact 
+            selectReceiver={selectReceiver} 
+            listChat={listChat} 
+            handleTab={handleTab} 
+          />
         </div>
         {tab === false ?
           <div className="col-lg-8 col-8 d-flex justify-content-center align-items-center" style={{ background: "#FAFAFA" }}>

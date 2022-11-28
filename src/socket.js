@@ -1,6 +1,6 @@
 import { io } from "socket.io-client";
 
-const URL = "http://localhost:4000";
+const URL = "https://telegram-app-backend-production.up.railway.app/";
 const socket = io(URL, { autoConnect: false });
 
 socket.onAny((event, ...args) => {

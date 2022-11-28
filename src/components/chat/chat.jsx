@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import contactImg5 from '../../assets/img/contact-img-5.png'
 import './chat.css'
+import userDefault from '../../assets/img/user_default.png'
 
 const Chat = ({
   detailReceiver,
@@ -22,10 +22,19 @@ const Chat = ({
       <div className="main-chat">
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <a className="navbar-brand" href="#">
-            <img src={contactImg5} width="64" height="64" alt="icon profile" />
+            <img
+              src={
+                detailReceiver?.data?.photo === "user_default.png" ?
+                  userDefault :
+                  "https://telegram-app-backend-production.up.railway.app/" + detailReceiver?.data.photo
+              }
+              width="64"
+              height="64"
+              alt="icon profile"
+            />
           </a>
           <div className="d-flex flex-column">
-            <h4 className="profile-name">Mother</h4>
+            <h4 className="profile-name">{detailReceiver?.data?.name}</h4>
             <p className="status">online</p>
           </div>
         </nav>

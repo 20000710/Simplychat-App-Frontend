@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import MenuIcon from '../../assets/img/Menu.svg'
-// import SearchIcon from '../../assets/img/Search.svg'
-import PlusIcon from '../../assets/img/Plus.svg'
 import './header.css'
 import { Link } from 'react-router-dom'
 import logo from '../../assets/img/simplychat.png'
@@ -11,8 +9,14 @@ import CallsIcon from '../../assets/img/calls.svg'
 import SaveMessageIcon from '../../assets/img/save-message.svg'
 import InviteFriendsIon from '../../assets/img/invite-friends.svg'
 import FAQIcon from '../../assets/img/FAQ.svg'
+import searchIcon from '../../assets/img/Search.svg'
+import { useEffect } from 'react'
+import { getAllUser } from '../../config/redux/actions/userDataActions'
+import { useDispatch } from 'react-redux'
 
 const Header = () => {
+    const dispatch = useDispatch()
+    const [query, setQuery] = useState("")
     const [modalOpen, setModalOpen] = useState(false)
 
     const handleModal = () => {
@@ -22,6 +26,20 @@ const Header = () => {
             setModalOpen(true)
         }
     }
+
+    const handleQuery = (e) => {
+        setQuery(e.target.value)
+    }
+
+    const handleSeach = () => {
+        let search = query?.toLowerCase()
+        dispatch(getAllUser(search))
+    }
+    useEffect(() => {
+        handleSeach()       
+    },[])
+
+    console.log('query: ', query);
 
     return (
         <div className="header-app">
@@ -80,13 +98,20 @@ const Header = () => {
             <div className="row menu-row">
                 <div className="search-icon col-lg-10 col-10">
                     <Link to="#">
-                        <input className="search-input" type="search" placeholder="Type your message..." aria-label="Search" />
+                        <input 
+                        className="search-input" 
+                        type="text" 
+                        placeholder="search your contact" 
+                        aria-label="Search"
+                        value={query}
+                        onChange={handleQuery}
+                        />
                     </Link>
                 </div>
-                <div className="plus-icon col-lg-2 col-2">
-                    <Link to="#">
-                        <img src={PlusIcon} alt="plus icon" />
-                    </Link>
+                <div className="search-icon col-lg-2 col-2">
+                    <button type='button' onClick={handleSeach}>
+                        <img src={searchIcon} alt="search icon" />
+                    </button>
                 </div>
             </div>
         </div>

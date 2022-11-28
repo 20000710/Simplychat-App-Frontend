@@ -20,7 +20,8 @@
 
 .contact-card .card-title{
     font-weight: 500;
-    font-size: 22px;    
+    font-size: 22px;
+    text-align: start;    
     letter-spacing: -0.165px;
     color: #232323;
     margin-right: 7px;
@@ -29,6 +30,7 @@
 .contact-card .card-text{
     font-weight: 400;
     font-size: 15px;
+    text-align: start;
     letter-spacing: -0.165px;
     color: #7E98DF;
 }

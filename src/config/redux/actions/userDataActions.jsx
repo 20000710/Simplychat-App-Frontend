@@ -2,9 +2,10 @@ import axios from 'axios';
 import Cookies from 'js-cookie';
 import Swal from "sweetalert2";
 
-export const getAllUser = () => async (dispatch) => {
+export const getAllUser = (search) => async (dispatch) => {
     try {
-        const users = await axios.get(process.env.REACT_APP_API_BACKEND + "users")
+        const query =  search === undefined || search === null ? "" : search 
+        const users = await axios.get(process.env.REACT_APP_API_BACKEND + "users?search=" + query)
         const result = users.data.data
         console.log('users: ', users);
         dispatch({ type: "GET_ALL_USER", payload: result })
@@ -105,7 +106,6 @@ export const updatePhoto = (id, saveImage, token) => async (dispatch) => {
         // });
         const result = upload.data.data
         dispatch({ type: "UPLOAD_PHOTO", payload: result })
-        window.location.reload();
     } catch (error) {
         Swal.fire({
             title: error.response.data.error,
