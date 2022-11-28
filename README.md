@@ -1,70 +1,120 @@
-# Getting Started with Create React App
+<div id="top"></div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- HEADER -->
+<div align="center">
+  <img src="./src/assets/img/simplychat.png" />
+  <h3 align="center">SimplyChat with React.js</h3>
+</div>
 
-## Available Scripts
+<!-- TABLE OF CONTENTS -->
 
-In the project directory, you can run:
+## Table of Contents
 
-### `yarn start`
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+       <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+       <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#related-project">Related Project</a></li>
+    <li><a href="#screenshoots">Screenshot</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#our-team">Our Team</a></li>
+  </ol>
+</details>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<!-- ABOUT THE PROJECT -->
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## About The Project
 
-### `yarn test`
+SimplyChat is a simple real-time chat web application that has a private chat feature, users can also search for available contacts and change personal profile data in the profile menu.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Built With
 
-### `yarn build`
+This application was developed using a framework/library
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [React Js](https://reactjs.org/)
+- [Javascript](https://www.javascript.com/)
+- [Axios](https://axios-http.com/)
+- [Redux](https://redux.js.org/)
+- [Bootstap](https://getbootstrap.com)
+- [Socket.io](https://socket.io/)
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<!-- GETTING STARTED -->
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Getting Started
 
-### `yarn eject`
+### Prerequisites
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Make sure that Node JS is installed on the computer.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [Node.Js](https://nodejs.org/en/download/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Installation
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Clone this repo (blanja-react)
+   ```sh
+   git clone https://github.com/20000710/Simplychat-App-Frontend.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install or yarn add
+   ```
+3. Enter your API in `.env`
+   ```js
+   REACT_APP_API_BACKEND = "ENTER YOUR API";
+   ```
+4. Start website
+ `sh npm start or yarn start`
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-## Learn More
+<!-- Related Project -->
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Related Project
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+:rocket: [`simplychat-backend`](https://github.com/20000710/Telegram-App-Backend.git)
 
-### Code Splitting
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<!-- Screenshoots -->
 
-### Analyzing the Bundle Size
+## Screenshoots
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p align="center" display=flex>
+<table>
+  <tr>
+    <td><image src="./screenshot/register.png" alt="Register Page" width=100%></td>
+    <td><image src="./screenshot/login.png" alt="Login Page" width=100%/></td>
+  </tr>
+   <tr>
+    <td>Register</td>
+    <td>Login</td>
+  </tr>
+  <tr>
+    <td><image src="./screenshot/landing-page.png" alt="Home Page" width=100% ></td>
+    <td><image src="./screenshot/detail-product.png" alt="detail product" width=100%/></td>
+  </tr>
+  <tr>
+    <td>Home</td>
+    <td>Search</td>
+  </tr>
+  <tr>
+    <td><image src="./screenshot/filter.png" alt="Filter Product" width=100%/></td>
+    <td><image src="./screenshot/payment.png" alt="Payment Checkout Page" width=100%></td>
+  </tr>
+  <tr>
+     <td>Add Receipe</td>
+     <td>Receipe Detail</td>
+  </tr>
+</table>
